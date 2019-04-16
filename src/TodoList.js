@@ -7,6 +7,7 @@ class TodoList extends Component {
       <Todo
         key={todo.id}
         {...todo} // todo内要素をすべて引き継ぐ
+        setTodoStatus={this.props.setTodoStatus}
       />
     )
 

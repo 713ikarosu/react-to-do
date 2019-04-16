@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TodoList from './TodoList';
+import './css/App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: [
+        {
+          id:1,
+          title: "Hello, React!",
+          desc: "Reactはじめました",
+          done: false,
+        },
+        {
+          id:2,
+          title: "Hello, Redux!",
+          desc: "Reduxもはじめました",
+          done: false,
+        },
+      ]
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app">
+        <h1>todo Application</h1>
+        <TodoList
+          // コンポーネントに渡す値
+          todos={this.state.todos}
+        />
       </div>
     );
   }
